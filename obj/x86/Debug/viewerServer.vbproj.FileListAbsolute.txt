@@ -1,9 +1,10 @@
+C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\obj\x86\Debug\viewerServer.Form1.resources
+C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\obj\x86\Debug\viewerServer.ItemUser.resources
+C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\obj\x86\Debug\viewerServer.Resources.resources
+C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\obj\x86\Debug\viewerServer.vbproj.GenerateResource.Cache
 C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\bin\Debug\viewerServer.exe
 C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\bin\Debug\viewerServer.pdb
 C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\bin\Debug\viewerServer.xml
-C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\obj\x86\Debug\viewerServer.Form1.resources
-C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\obj\x86\Debug\viewerServer.Resources.resources
-C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\obj\x86\Debug\viewerServer.vbproj.GenerateResource.Cache
 C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\obj\x86\Debug\viewerServer.exe
 C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\obj\x86\Debug\viewerServer.xml
 C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\obj\x86\Debug\viewerServer.pdb

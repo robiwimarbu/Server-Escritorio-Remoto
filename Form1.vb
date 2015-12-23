@@ -21,17 +21,15 @@
     End Sub
     Public Sub newClientFrm(ByVal countCLients As Integer, ByVal idClient As String)
         sv.flagNewClient = "None"
-        Dim btn As New Button()
-        Dim itemNumbers As Integer = countCLients
-        Dim name As String = idClient
-        btn.Name = name
-        btn.Text = name
-        btn.Location = New Point(5, itemNumbers * 35)
-        btn.Size = New Size(220, 32)
-        btn.BackColor = Color.Blue
-        btn.Visible = True
-        AddHandler btn.Click, AddressOf acceptClient
-        pnUsersConect.Controls.Add(btn)
+        Dim itemNumbers As Integer = countCLients - 1
+        Dim itemeUser As New ItemUser
+        itemeUser.Name = Name
+        itemeUser.lblName.Text = idClient.ToString()
+        itemeUser.Location = New Point(5, (itemNumbers * 65) + 1)
+        itemeUser.Size = New Size(pnUsersConect.Width - 7, 61)
+        pnUsersConect.Controls.Add(itemeUser)
+        AddHandler itemeUser.Click, AddressOf acceptClient
+
         Label1.Text = "Usuarios conectados [" & sv.clients.Count & "]"
     End Sub
     Public Sub checkModifyClient() Handles tmrConect.Tick
