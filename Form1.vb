@@ -21,15 +21,7 @@
     End Sub
     Public Sub newClientFrm(ByVal countCLients As Integer, ByVal idClient As String)
         sv.flagNewClient = "None"
-        Dim itemNumbers As Integer = countCLients - 1
-        Dim itemeUser As New ItemUser
-        itemeUser.Name = Name
-        itemeUser.lblName.Text = idClient.ToString()
-        itemeUser.Location = New Point(5, (itemNumbers * 65) + 1)
-        itemeUser.Size = New Size(pnUsersConect.Width - 7, 61)
-        pnUsersConect.Controls.Add(itemeUser)
-        AddHandler itemeUser.Click, AddressOf acceptClient
-
+        showClients()
         Label1.Text = "Usuarios conectados [" & sv.clients.Count & "]"
     End Sub
     Public Sub checkModifyClient() Handles tmrConect.Tick
@@ -42,8 +34,10 @@
     End Sub
     Public Sub removeClientFrm(ByVal idClient As String)
         Try
+            'sv.flagRemoveClient = "None"
+            'pnUsersConect.Controls.Remove(pnUsersConect.Controls.Item(idClient))
             sv.flagRemoveClient = "None"
-            pnUsersConect.Controls.Remove(pnUsersConect.Controls.Item(idClient))
+            showClients()
             Label1.Text = "Usuarios conectados [" & sv.clients.Count & "]"
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -54,8 +48,37 @@
         Dim strEndPoint As String
         strEndPoint = sender.name
         Debug.Print("Llego: " & sender.name.ToString)
-        sv.clientAutorized = strEndPoint
+        If sv.clientAutorized = strEndPoint Then
+            sv.clientAutorized = ""
+            sender.text = "Pemitir Control"
+        Else
+            sender.text = "Detener Control"
+            sv.clientAutorized = strEndPoint
+        End If
+
     End Sub
+
+    Public Sub showClients()
+
+        pnUsersConect.Controls.Clear()
+        Dim i As Integer = 0
+        If sv.clients.Count > 0 Then
+            For Each Cliente In sv.clients.Values
+                Dim name As String = Cliente.id.ToString
+                Dim itemNumbers As Integer = i
+                Dim itemeUser As New ItemUser
+                itemeUser.LnkAllowControl.Name = name
+                itemeUser.lblName.Text = Cliente.id.ToString()
+                itemeUser.Location = New Point(5, (itemNumbers * 65) + 1)
+                itemeUser.Size = New Size(pnUsersConect.Width - 11, 61)
+                pnUsersConect.Controls.Add(itemeUser)
+                AddHandler itemeUser.LnkAllowControl.Click, AddressOf acceptClient
+                i = i + 1
+            Next
+
+        End If
+    End Sub
+
     Private Sub Form1_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         End
     End Sub
