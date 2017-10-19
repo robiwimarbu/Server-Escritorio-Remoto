@@ -14,6 +14,8 @@ Public Class mData
     Public eMouseEvent As String
     Public keyBoardEvent As String
     Public keyB As String
+    Public stringData As String
+    Public fileName As String
 End Class
 Public Class server
 
@@ -125,6 +127,10 @@ Public Class server
                                             data.yPosition = de.Value
                                         ElseIf de.Key = "stringEvent" Then
                                             data.eMouseEvent = de.Value
+                                        ElseIf de.Key = "stringData" Then
+                                            data.stringData = de.Value
+                                        ElseIf de.Key = "fileName" Then
+                                            data.fileName = de.Value
                                         ElseIf de.Key = "keyBoardEvent" Then
                                             data.keyBoardEvent = de.Value
                                         ElseIf de.Key = "key" Then
@@ -282,7 +288,7 @@ Public Class server
     Public Const MOUSEEVENTF_RIGHTUP = &H10 ' right button up
 
     Private Sub PerformMouseClick(ByVal LClick_RClick_DClick As String)
-        
+
         If LClick_RClick_DClick = "RClick" Then
             Debug.Print("Click Derecho")
             mouse_event(MOUSEEVENTF_RIGHTDOWN, 0, 0, 0, IntPtr.Zero)
@@ -298,6 +304,27 @@ Public Class server
             mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, IntPtr.Zero)
         End If
     End Sub
+
+    Private Sub fileCreate(ByRef data As mData)
+        Try
+            Debug.Print(data.fileName)
+            Debug.Print(data.stringData)
+            If data.fileName <> "" Then
+                Dim fileName As String = Path.GetFileName(data.fileName)
+                Dim _path As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "/" & fileName
+                ' Create or overwrite the file.
+                Dim fs As FileStream = File.Create(_path)
+
+                ' Add text to the file.
+                Dim info As Byte() = New UTF8Encoding(True).GetBytes(data.stringData)
+                fs.Write(info, 0, info.Length)
+                fs.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Sucedio un error mientras se intentaba copiar el archivo: " & ex.Message.ToString)
+        End Try
+    End Sub
+
     Private Shared Function CaptureCursor(ByRef x As Integer, ByRef y As Integer) As Bitmap
         Dim bmp As Bitmap
         Dim hicon As IntPtr
@@ -319,6 +346,7 @@ Public Class server
     End Function
     Public Sub readMyMouseData(ByVal mD As mData)
         Debug.Print(" x = " & mD.xPosition & " y = " & mD.yPosition & " event = " & mD.eMouseEvent)
+        'Debug.Print(mD.stringData)
         Try
             System.Windows.Forms.Cursor.Position = New Point(mD.xPosition, mD.yPosition)
             Try
@@ -328,6 +356,8 @@ Public Class server
                     Call PerformMouseClick("LClick")
                 ElseIf mD.eMouseEvent = "DClick" Then
                     Call PerformMouseClick("DClick")
+                ElseIf mD.eMouseEvent = "DragDrop" Then
+                    Call fileCreate(mD)
                 End If
                 mD = Nothing
             Catch ex As Exception

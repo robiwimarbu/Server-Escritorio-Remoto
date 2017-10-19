@@ -8,3 +8,14 @@ C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\b
 C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\obj\x86\Debug\viewerServer.exe
 C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\obj\x86\Debug\viewerServer.xml
 C:\Users\Robin\Documents\Visual Studio 2010\Projects\viewerServer\viewerServer\obj\x86\Debug\viewerServer.pdb
+C:\Users\robin.valencia\Source\Repos\Server-Escritorio-Remoto2\bin\Debug\viewerServer.exe
+C:\Users\robin.valencia\Source\Repos\Server-Escritorio-Remoto2\bin\Debug\viewerServer.pdb
+C:\Users\robin.valencia\Source\Repos\Server-Escritorio-Remoto2\bin\Debug\viewerServer.xml
+C:\Users\robin.valencia\Source\Repos\Server-Escritorio-Remoto2\obj\x86\Debug\viewerServer.vbprojResolveAssemblyReference.cache
+C:\Users\robin.valencia\Source\Repos\Server-Escritorio-Remoto2\obj\x86\Debug\viewerServer.Form1.resources
+C:\Users\robin.valencia\Source\Repos\Server-Escritorio-Remoto2\obj\x86\Debug\viewerServer.ItemUser.resources
+C:\Users\robin.valencia\Source\Repos\Server-Escritorio-Remoto2\obj\x86\Debug\viewerServer.Resources.resources
+C:\Users\robin.valencia\Source\Repos\Server-Escritorio-Remoto2\obj\x86\Debug\viewerServer.vbproj.GenerateResource.Cache
+C:\Users\robin.valencia\Source\Repos\Server-Escritorio-Remoto2\obj\x86\Debug\viewerServer.exe
+C:\Users\robin.valencia\Source\Repos\Server-Escritorio-Remoto2\obj\x86\Debug\viewerServer.xml
+C:\Users\robin.valencia\Source\Repos\Server-Escritorio-Remoto2\obj\x86\Debug\viewerServer.pdb
